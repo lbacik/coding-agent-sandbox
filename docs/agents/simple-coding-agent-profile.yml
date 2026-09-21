@@ -1,0 +1,8 @@
+setup: "uv sync --extra dev"
+check:
+  - "uv run pytest"
+base_branch: main
+timeout: 300
+setup_timeout: 120
+env:
+  APP_ENV: test
