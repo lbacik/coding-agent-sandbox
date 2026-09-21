@@ -1,4 +1,4 @@
-setup: "uv sync --extra dev"
+setup: "uv sync"
 check:
   - "uv run pytest"
 base_branch: main
