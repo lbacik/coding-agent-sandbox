@@ -5,6 +5,14 @@ def to_cents(amount: float) -> int:
     return round(amount * 100)
 
 
+def format_price(amount: float) -> str:
+    if amount < 0:
+        raise ValueError("amount must not be negative")
+
+    cents = to_cents(amount)
+    return f"${cents // 100}.{cents % 100:02d}"
+
+
 def item_total(quantity: int, unit_price: float) -> float:
     return round(quantity * unit_price, 2)
 
