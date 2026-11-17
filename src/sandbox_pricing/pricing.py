@@ -5,6 +5,13 @@ def to_cents(amount: float) -> int:
     return round(amount * 100)
 
 
+def from_cents(cents: int) -> float:
+    if isinstance(cents, bool) or not isinstance(cents, int):
+        raise ValueError("cents must be an int")
+
+    return cents / 100
+
+
 def item_total(quantity: int, unit_price: float) -> float:
     return round(quantity * unit_price, 2)
 
